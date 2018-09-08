@@ -18,7 +18,7 @@ fi
 
 # Forcing SSH protocol version 2 which is safer.
 ssh() {
-    /usr/bin/ssh -2 $*;
+  /usr/bin/ssh -2 $*;
 }
 
 # Going up the directory tree.
@@ -37,4 +37,10 @@ function mkcd() {
 
 # Groovy.
 export GROOVY_HOME="/usr/local/opt/groovy/libexec"
+
+# Eclim.
+# Assumes eclimd-path to be available (most likely with a sym link).
+function eclim() {
+   $HOME/eclipse/eclimd-path/eclimd -Dosgi.instance.area.default=$1 -Dnailgun.server.port=$2
+}
 
