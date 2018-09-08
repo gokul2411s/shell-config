@@ -35,9 +35,6 @@ function mkcd() {
     mkdir -p "$1" && cd "$1";
 }
 
-# Groovy.
-export GROOVY_HOME="/usr/local/opt/groovy/libexec"
-
 # Eclim.
 # Assumes eclimd-path to be available (most likely with a sym link).
 function eclim() {
