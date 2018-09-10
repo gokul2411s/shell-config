@@ -8,7 +8,7 @@ if [[ -f "$HOME/.nix-profile/etc/profile.d/nix.sh" ]]; then
 fi
 
 # Setting up editor.
-export EDITOR=`which nvim`
+export EDITOR=$(which nvim)
 alias vim="$EDITOR"
 
 # Fuzzy searching with FZF.
@@ -38,6 +38,9 @@ function mkcd() {
 # Eclim.
 # Assumes eclimd-path to be available (most likely with a sym link).
 function eclim() {
-   $HOME/eclipse/eclimd-path/eclimd -Dosgi.instance.area.default=$1 -Dnailgun.server.port=$2
+  oldpwd=$(pwd)
+  cd "$HOME/eclipse/eclimd-path"
+  ./eclimd -Dosgi.instance.area.default=$1 -Dnailgun.server.port=$2
+  cd "$oldpwd"
 }
 
