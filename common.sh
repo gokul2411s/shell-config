@@ -36,10 +36,10 @@ function mkcd() {
 }
 
 # Eclim.
-# Assumes eclimd-path to be available (most likely with a sym link).
+# Assumes Eclim to be installed at $ECLIPSE_HOME/eclimd.
 function eclim() {
   oldpwd=$(pwd)
-  cd "$HOME/eclipse/eclimd-path"
+  cd "$ECLIPSE_HOME"
   ./eclimd -Dosgi.instance.area.default=$1 -Dnailgun.server.port=$2
   cd "$oldpwd"
 }
