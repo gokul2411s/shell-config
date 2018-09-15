@@ -44,3 +44,6 @@ function eclim() {
   cd "$oldpwd"
 }
 
+# Email.
+alias gmail="neomutt -F $HOME/mail-config/common-mail-config/neomutt/.neomuttrc"
+
