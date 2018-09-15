@@ -48,3 +48,6 @@ function eclim() {
 # Email.
 alias gmail="neomutt -F $HOME/mail-config/common-mail-config/neomutt/.neomuttrc"
 
+# That's just for fun...
+ddate
+
