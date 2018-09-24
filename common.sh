@@ -10,6 +10,7 @@ fi
 # Setting up editor.
 export EDITOR=$(which nvim)
 alias vim="$EDITOR"
+alias vimdiff="nvim -d"
 
 # Fuzzy searching with FZF.
 if [[ -f "$HOME/.fzf.zsh" ]]; then
