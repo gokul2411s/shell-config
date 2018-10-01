@@ -17,9 +17,9 @@ if [[ -f "$HOME/.fzf.zsh" ]]; then
   source "$HOME/.fzf.zsh"
 fi
 
-# Forcing SSH protocol version 2 which is safer.
+# Forcing SSH protocol version 2 which is safer, and using X.
 ssh() {
-  /usr/bin/ssh -2 $*;
+  /usr/bin/ssh -2 -X $*;
 }
 
 # Going up the directory tree.
@@ -47,6 +47,9 @@ function eclim() {
 
 # Email.
 alias gmail="neomutt -F $HOME/mail-config/common-mail-config/neomutt/.neomuttrc"
+
+# News.
+alias news="newsboat -u $HOME/news-config/newsboat/urls -C $HOME/news-config/newsboat/config"
 
 # That's just for fun...
 ddate
