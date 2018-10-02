@@ -54,6 +54,9 @@ alias gcal="ikhal -c $HOME/cal-config/common-cal-config/khal/config"
 # News.
 alias news="newsboat -u $HOME/news-config/newsboat/urls -C $HOME/news-config/newsboat/config"
 
+# Tmux.
+alias tmux="tmux -2 -f $HOME/shell-config/common-shell-config/tmux/.tmux.conf"
+
 # That's just for fun...
 ddate
 
