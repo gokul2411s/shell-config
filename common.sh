@@ -48,6 +48,9 @@ function eclim() {
 # Email.
 alias gmail="neomutt -F $HOME/mail-config/common-mail-config/neomutt/.neomuttrc"
 
+# Calendar.
+alias gcal="ikhal -c $HOME/cal-config/common-cal-config/khal/config"
+
 # News.
 alias news="newsboat -u $HOME/news-config/newsboat/urls -C $HOME/news-config/newsboat/config"
 
