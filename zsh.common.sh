@@ -57,7 +57,7 @@ if [[ ! -d "$HOME/.zsh/completion" ]]; then
   mkdir -p "$HOME/.zsh/completion"
 fi
 
-export fpath=("$HOME/.zsh/completion" $fpath)
+fpath=("$HOME/.zsh/completion" $fpath)
 autoload -Uz compinit && compinit -i
 
 # Minimalist prompts.
