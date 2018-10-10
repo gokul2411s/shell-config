@@ -52,6 +52,14 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+# ZSH general completion scripts path.
+if [[ ! -d "$HOME/.zsh/completion" ]]; then
+  mkdir -p "$HOME/.zsh/completion"
+fi
+
+export fpath=("$HOME/.zsh/completion" $fpath)
+autoload -Uz compinit && compinit -i
+
 # Minimalist prompts.
 export PROMPT="%{$fg[cyan]%}[%~] %#%{$fg[default]%} $program"
 export RPROMPT=
