@@ -22,6 +22,27 @@ ssh() {
   /usr/bin/ssh -2 -X $*;
 }
 
+# For setting up SSH agent.
+SSH_ENV="$HOME/.ssh/environment"
+function _start_ssh_agent_unsafe() {
+  echo "Initializing new SSH agent..."
+  (umask 066; ssh-agent > "$SSH_ENV")
+  source "$SSH_ENV" &> /dev/null
+}
+
+function start_ssh_agent() {
+
+  if [ -f "${SSH_ENV}" ]; then
+    source "${SSH_ENV}" &> /dev/null
+    ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent &> /dev/null || {
+      _start_ssh_agent_unsafe
+    }
+  else
+    _start_ssh_agent_unsafe
+  fi
+}
+start_ssh_agent
+
 # Going up the directory tree.
 alias ..="cd .."
 alias ..2="cd ../.."
