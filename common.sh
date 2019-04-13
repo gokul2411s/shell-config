@@ -57,6 +57,12 @@ function mkcd() {
     mkdir -p "$1" && cd "$1";
 }
 
+# virtualenv commands.
+pva() {
+  source "${1:-venv}/bin/activate"
+}
+alias pvd='deactivate'
+
 # Eclim.
 # Assumes Eclim to be installed at $ECLIPSE_HOME/eclimd.
 function eclim() {
